@@ -1,5 +1,4 @@
 import instaloader
-import getpass
 from colorama import Fore, init
 import time
 import os
@@ -63,3 +62,11 @@ def check_followers(logged_in_username, password, target_username):
         print("Connection error occurred. Try again later.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+# Hardcoded credentials
+logged_in_username = "bakchodii.central"
+password = "divyahaha"
+target_username = "somrajpaul_"
+
+# Run the function
+check_followers(logged_in_username, password, target_username)
