@@ -53,7 +53,7 @@ def check_followers(logged_in_username, password, target_username):
         print(Fore.RED + "\nThese accounts are not following you back:")
         for user in not_following_back:
             print(user)
-    
+
     except instaloader.exceptions.ProfileNotExistsException:
         print(f"The profile '{target_username}' does not exist.")
     except instaloader.exceptions.LoginRequiredException:
@@ -66,9 +66,3 @@ def check_followers(logged_in_username, password, target_username):
         print("Connection error occurred. Try again later.")
     except Exception as e:
         print(f"An error occurred: {e}")
-
-# Main program
-logged_in_username = input("Enter your Instagram username: ")
-password = getpass.getpass("Enter your Instagram password: ")
-target_username = input("Enter the target Instagram username: ")
-check_followers(logged_in_username, password, target_username)
