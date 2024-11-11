@@ -1,3 +1,6 @@
+# Install necessary libraries
+!pip install instaloader colorama
+
 import instaloader
 import getpass
 from colorama import Fore, init
@@ -23,7 +26,7 @@ def check_followers(logged_in_username, password, target_username):
         L = instaloader.Instaloader()
 
         # Load session if it exists
-        session_file = f'{logged_in_username}_session'
+        session_file = f'/content/drive/MyDrive/{logged_in_username}_session'  # Google Drive path
         if os.path.exists(session_file):
             L.load_session_from_file(logged_in_username, filename=session_file)
         else:
@@ -67,8 +70,8 @@ def check_followers(logged_in_username, password, target_username):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-if __name__ == "__main__":
-    logged_in_username = input("Enter your Instagram username: ")
-    password = getpass.getpass("Enter your Instagram password: ")
-    target_username = input("Enter the target Instagram username: ")
-    check_followers(logged_in_username, password, target_username)
+# Main program
+logged_in_username = input("Enter your Instagram username: ")
+password = getpass.getpass("Enter your Instagram password: ")
+target_username = input("Enter the target Instagram username: ")
+check_followers(logged_in_username, password, target_username)
