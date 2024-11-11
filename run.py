@@ -22,14 +22,8 @@ def check_followers(logged_in_username, password, target_username):
         # Create an instance of Instaloader
         L = instaloader.Instaloader()
 
-        # Load session if it exists
-        session_file = f'/content/drive/MyDrive/{logged_in_username}_session'  # Google Drive path
-        if os.path.exists(session_file):
-            L.load_session_from_file(logged_in_username, filename=session_file)
-        else:
-            # Log in to Instagram with the primary account
-            L.login(logged_in_username, password)
-            L.save_session_to_file(filename=session_file)
+        # Log in to Instagram with the primary account
+        L.login(logged_in_username, password)
 
         # Load the target profile
         profile = instaloader.Profile.from_username(L.context, target_username)
