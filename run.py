@@ -1,6 +1,3 @@
-# Install necessary libraries
-!pip install instaloader colorama
-
 import instaloader
 import getpass
 from colorama import Fore, init
