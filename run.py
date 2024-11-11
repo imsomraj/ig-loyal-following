@@ -16,6 +16,7 @@ def fetch_users(profile, fetch_function, batch_size=100):
 
 def check_followers(logged_in_username, password, target_username):
     try:
+        print("Initializing InstaLoader...")  # Debugging line
         # Initialize colorama
         init(autoreset=True)
 
@@ -23,16 +24,18 @@ def check_followers(logged_in_username, password, target_username):
         L = instaloader.Instaloader()
 
         # Log in to Instagram with the primary account
+        print("Logging in...")  # Debugging line
         L.login(logged_in_username, password)
 
         # Load the target profile
+        print(f"Fetching profile for {target_username}...")  # Debugging line
         profile = instaloader.Profile.from_username(L.context, target_username)
 
         # Get the list of followings and followers
-        print("Fetching followings...")
+        print("Fetching followings...")  # Debugging line
         followings = fetch_users(profile, profile.get_followees)
 
-        print("Fetching followers...")
+        print("Fetching followers...")  # Debugging line
         followers = fetch_users(profile, profile.get_followers)
 
         # Check if followings are in followers
