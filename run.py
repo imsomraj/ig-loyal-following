@@ -10,7 +10,7 @@ def fetch_users(profile, fetch_function, batch_size=100):
         users.add(user.username)
         count += 1
         if count % batch_size == 0:
-            time.sleep(5)  # Adjust delay between batches
+            time.sleep(15)  # Adjust delay between batches
     return users
 
 def check_followers(logged_in_username, password, target_username):
@@ -32,10 +32,10 @@ def check_followers(logged_in_username, password, target_username):
 
         # Get the list of followings and followers
         print("Fetching followings...")  # Debugging line
-        followings = fetch_users(profile, profile.get_followees, batch_size=70)
+        followings = fetch_users(profile, profile.get_followees, batch_size=20)
 
         print("Fetching followers...")  # Debugging line
-        followers = fetch_users(profile, profile.get_followers, batch_size=70)
+        followers = fetch_users(profile, profile.get_followers, batch_size=20)
 
         # Check if followings are in followers
         following_back = [user for user in followings if user in followers]
