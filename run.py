@@ -64,9 +64,9 @@ def check_followers(logged_in_username, password, target_username):
         print(f"An error occurred: {e}")
 
 # Hardcoded credentials
-logged_in_username = "bakchodii.central"
-password = "divyahaha"
-target_username = "somrajpaul_"
+logged_in_username = "instagram"
+password = "123456"
+target_username = "target.user"
 
 # Run the function
 check_followers(logged_in_username, password, target_username)
